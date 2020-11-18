@@ -1,0 +1,95 @@
+.container
+    max-width: 1250px
+    margin: 0 auto
+    padding-left: 15px
+    padding-right: 15px
+.header
+    background: url(../img/Bg.png), center
+    background-size: cover
+    background-repeat: no-repeat
+    max-width: 100%
+    position: relative
+    padding-bottom: 10.125rem
+.logo__img
+    padding-top: .5rem
+.top
+    display: flex
+.nav
+    margin-left: auto
+    @media screen and ( max-width: 768px)
+        position: absolute
+        top: -1000px
+        left: 0
+        &.is-active
+            top: 0
+            width: 100%
+            height: 100%
+            background-color: #fff
+            z-index: 3
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-direction: column
+
+.nav__link
+    text-decoration: none
+    color: #ffffff
+    font-weight: bold
+    font-size: 1.3125rem
+    margin-left: 3.1875rem
+    padding-top: 2.8125rem
+    font-family: 'gentium', sans-serif
+    font-style: normal
+    &:hover
+        border-top: 3px solid #fff
+    @media screen and ( max-width: 1200px)
+        font-size: 1rem
+        margin-left: 2rem
+    @media screen and ( max-width: 928px)
+        margin-left: 1rem
+    @media screen and ( max-width: 768px)
+        color: #000
+        padding-top: 1rem
+        margin: 0
+        &:hover
+            color: #ccc
+            text-decoration: underline
+.nav__icons
+    margin: 0
+.header-info__slogan
+    margin-top: 139px
+    font-size: 90px
+    color: #ffffff
+    font-weight: 400
+    font-family: "yesevaone"
+    font-style: normal
+    text-align: center
+    filter: drop-shadow(0.469px 0.883px 1px rgba(1,1,1,0.64))
+.header-info__decoration
+    text-align: center
+    margin-top: 2rem
+
+.hamburger
+    display: none
+    @media screen and ( max-width: 768px)
+        display: inline-block
+        z-index: 5
+        margin-left: auto
+
+.header-btn
+    margin-top: 3.5625rem
+    text-align: center
+
+.header-btn__link
+    font-size: 1.125rem
+    font-family: 'lato', sans-serif
+    font-weight: normal
+    font-style: normal
+    color: #fff
+    padding: 1.4375rem 3.3125rem 1.25rem 3.3125rem
+    background-color: #00000085
+    text-decoration: none
+    text-transform: uppercase
+.header-btn__colored
+    background-color: #ffffff3f
+    margin-left: 1.8125rem
