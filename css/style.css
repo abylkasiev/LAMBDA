@@ -143,12 +143,13 @@ html, body {
 }
 
 .header {
-  background: url(../img/Bg.png), center;
+  background: url(../img/header-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   max-width: 100%;
   position: relative;
   padding-bottom: 10.125rem;
+  box-shadow: 0 60px 150px #000 inset;
 }
 
 .logo__img {
@@ -225,6 +226,7 @@ html, body {
   margin-top: 139px;
   font-size: 90px;
   color: #ffffff;
+  padding: 0 9rem;
   font-weight: 400;
   font-family: "yesevaone";
   font-style: normal;
@@ -268,6 +270,69 @@ html, body {
 .header-btn__colored {
   background-color: #ffffff3f;
   margin-left: 1.8125rem;
+}
+
+.about-section {
+  background: url(../img/about-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 100%;
+}
+
+.about {
+  display: flex;
+  padding-right: 5.125rem;
+  padding-left: 5.375rem;
+}
+
+.about__info {
+  margin-right: 2.25rem;
+  padding-top: 6.625rem;
+}
+
+.about__info-slogan {
+  font-size: 36px;
+  line-height: 24px;
+  color: #cc9900;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "yesevaone";
+  text-align: center;
+  margin: 0;
+}
+
+.about__info-text {
+  font-size: 16px;
+  line-height: 24px;
+  color: #4c4c4c;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "lato";
+  text-align: center;
+}
+
+.about__info-decoration {
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+.about__info-text {
+  padding-top: 2rem;
+  margin: 0;
+}
+
+.about__info-image {
+  padding-top: 3.25rem;
+  position: relative;
+}
+
+.about__info-photo {
+  position: absolute;
+  right: 4.375rem;
+}
+
+.about__dish {
+  padding-top: 3.4375rem;
 }
 
 /*# sourceMappingURL=style.css.map */
