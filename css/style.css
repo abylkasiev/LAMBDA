@@ -162,24 +162,41 @@ html, body {
 
 .nav {
   margin-left: auto;
+  display: flex;
 }
 @media screen and (max-width: 768px) {
   .nav {
     position: absolute;
-    top: -1000px;
     left: 0;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .nav.is-active {
     top: 0;
-    width: 100%;
-    height: 100%;
     background-color: #fff;
     z-index: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
   }
+  .nav.is-active :hover {
+    color: #454545;
+    text-decoration: underline;
+  }
+}
+.nav__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav__item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 3.1875rem;
 }
 
 .nav__link {
@@ -187,15 +204,25 @@ html, body {
   color: #ffffff;
   font-weight: bold;
   font-size: 1.3125rem;
-  margin-left: 3.1875rem;
-  padding-top: 2.8125rem;
+  padding: 0 1rem;
   font-family: "gentium", sans-serif;
   font-style: normal;
 }
-.nav__link:hover {
-  border-top: 3px solid #fff;
+.nav__link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  transition: 0.5s;
+  transform: scaleX(0);
 }
-@media screen and (max-width: 1200px) {
+.nav__link:hover::before {
+  transform: scaleX(1);
+}
+@media screen and (max-width: 1170px) {
   .nav__link {
     font-size: 1rem;
     margin-left: 2rem;
@@ -203,31 +230,38 @@ html, body {
 }
 @media screen and (max-width: 928px) {
   .nav__link {
-    margin-left: 1rem;
+    font-size: 1rem;
+    margin-left: 0.7rem;
   }
 }
 @media screen and (max-width: 768px) {
   .nav__link {
+    top: -1000px;
     color: #000;
     padding-top: 1rem;
-    margin: 0;
-  }
-  .nav__link:hover {
-    color: #ccc;
-    text-decoration: underline;
   }
 }
 
-.nav__icons {
-  margin: 0;
+.social {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons {
+  color: #dab33e;
+  margin-left: 1.25rem;
+}
+.social-icons:hover {
+  color: #3b83e0;
 }
 
 .header-info__slogan {
   margin-top: 139px;
   font-size: 90px;
   color: #ffffff;
-  padding: 0 9rem;
   font-weight: 400;
+  padding-left: 8.75rem;
+  padding-right: 8.75rem;
   font-family: "yesevaone";
   font-style: normal;
   text-align: center;
@@ -239,6 +273,27 @@ html, body {
   margin-top: 2rem;
 }
 
+.header-btn {
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+.header-btn__link {
+  background-color: #00000096;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 1.4375rem 3.25rem 1.3125rem 3.25rem;
+}
+.header-btn__link:hover {
+  background-color: #aa838396;
+}
+
+.header-btn__colored {
+  background-color: #ffffff34;
+  margin-left: 2rem;
+}
+
 .hamburger {
   display: none;
 }
@@ -246,30 +301,7 @@ html, body {
   .hamburger {
     display: inline-block;
     z-index: 5;
-    margin-left: auto;
   }
-}
-
-.header-btn {
-  margin-top: 3.5625rem;
-  text-align: center;
-}
-
-.header-btn__link {
-  font-size: 1.125rem;
-  font-family: "lato", sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  color: #fff;
-  padding: 1.4375rem 3.3125rem 1.25rem 3.3125rem;
-  background-color: #00000085;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.header-btn__colored {
-  background-color: #ffffff3f;
-  margin-left: 1.8125rem;
 }
 
 .about-section {
@@ -387,7 +419,7 @@ html, body {
   background-color: #ffffff25;
   width: 287px;
   height: 191px;
-  border-radius: 3px;
+  border-radius: 5px;
   margin-left: 2.8125rem;
 }
 
@@ -399,7 +431,7 @@ html, body {
   background-color: #ffffff25;
   width: 244px;
   height: 218px;
-  border-radius: 3px;
+  border-radius: 5px;
   position: absolute;
   left: 188px;
   bottom: 90px;
@@ -413,7 +445,7 @@ html, body {
   background-color: #ffffff25;
   width: 211px;
   height: 144px;
-  border-radius: 3px;
+  border-radius: 5px;
   position: absolute;
   right: 32px;
   bottom: 90px;
