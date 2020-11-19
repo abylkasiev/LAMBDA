@@ -128,6 +128,10 @@
   font-weight: bold;
   font-style: normal;
 }
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -168,11 +172,10 @@ html, body {
   .nav {
     position: absolute;
     left: 0;
-    top: 100%;
+    top: -100%;
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -181,10 +184,6 @@ html, body {
     background-color: #fff;
     z-index: 3;
   }
-  .nav.is-active :hover {
-    color: #454545;
-    text-decoration: underline;
-  }
 }
 .nav__list {
   display: flex;
@@ -192,11 +191,38 @@ html, body {
   padding: 0;
   list-style: none;
 }
+@media screen and (max-width: 768px) {
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav__list :hover {
+    color: #454545;
+    text-decoration: underline;
+  }
+}
 .nav__item {
   display: flex;
   align-items: center;
   position: relative;
   margin-left: 3.1875rem;
+}
+@media screen and (max-width: 1258px) {
+  .nav__item {
+    margin-left: 2rem;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .nav__item {
+    margin-left: 1rem;
+  }
+}
+@media screen and (max-width: 928px) {
+  .nav__item {
+    margin-left: 0;
+  }
 }
 
 .nav__link {
@@ -222,16 +248,14 @@ html, body {
 .nav__link:hover::before {
   transform: scaleX(1);
 }
-@media screen and (max-width: 1170px) {
+@media screen and (max-width: 1140px) {
   .nav__link {
     font-size: 1rem;
-    margin-left: 2rem;
   }
 }
 @media screen and (max-width: 928px) {
   .nav__link {
-    font-size: 1rem;
-    margin-left: 0.7rem;
+    padding: 0 0.5rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -246,6 +270,11 @@ html, body {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 768px) {
+  .social {
+    margin-top: 1rem;
+  }
+}
 
 .social-icons {
   color: #dab33e;
@@ -253,6 +282,11 @@ html, body {
 }
 .social-icons:hover {
   color: #3b83e0;
+}
+@media screen and (max-width: 768px) {
+  .social-icons {
+    margin: 0 0.5rem;
+  }
 }
 
 .header-info__slogan {
@@ -301,6 +335,7 @@ html, body {
   .hamburger {
     display: inline-block;
     z-index: 5;
+    margin-left: auto;
   }
 }
 
@@ -309,17 +344,17 @@ html, body {
   background-size: cover;
   background-repeat: no-repeat;
   max-width: 100%;
+  padding: 4.625rem 0 2rem 0;
 }
 
 .about {
   display: flex;
-  padding-right: 5.125rem;
-  padding-left: 5.375rem;
 }
 
 .about__info {
-  margin-right: 2.25rem;
-  padding-top: 6.625rem;
+  margin: 0 2.25rem;
+  width: 40%;
+  padding: 2.125rem 1rem 0 1rem;
 }
 
 .about__info-slogan {
@@ -361,11 +396,15 @@ html, body {
 .about__info-photo {
   position: absolute;
   right: 4.375rem;
+  max-width: 100%;
 }
 
 .about__dish {
-  padding-top: 3.4375rem;
-  padding-bottom: 2rem;
+  width: 60%;
+}
+
+.about__dish-image {
+  max-width: 100%;
 }
 
 .ingredients-section {
